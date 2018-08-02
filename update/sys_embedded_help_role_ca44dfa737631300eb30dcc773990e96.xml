@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_228328_ctwebhook.testdn_user" name="x_228328_ctwebhook.testdn_user">0e445ba737631300eb30dcc773990ee5</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-02 10:30:58</sys_created_on>
+        <sys_id>ca44dfa737631300eb30dcc773990e96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>0e445ba737631300eb30dcc773990ee5</sys_name>
+        <sys_package display_value="ctwebhook" source="x_228328_ctwebhook">b9118c7637231300eb30dcc773990eb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ctwebhook">b9118c7637231300eb30dcc773990eb6</sys_scope>
+        <sys_update_name>sys_embedded_help_role_ca44dfa737631300eb30dcc773990e96</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-02 10:30:58</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

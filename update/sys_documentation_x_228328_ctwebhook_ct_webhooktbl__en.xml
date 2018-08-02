@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="" label="ct_webhooktbl" language="en" table="x_228328_ctwebhook_ct_webhooktbl">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>ct_webhooktbl</label>
+            <language>en</language>
+            <name>x_228328_ctwebhook_ct_webhooktbl</name>
+            <plural>ct_webhooktbls</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-08-02 10:14:46</sys_created_on>
+            <sys_id>3890d72737631300eb30dcc773990eb0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>ct_webhooktbl</sys_name>
+            <sys_package display_value="ctwebhook" source="x_228328_ctwebhook">b9118c7637231300eb30dcc773990eb6</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="ctwebhook">b9118c7637231300eb30dcc773990eb6</sys_scope>
+            <sys_update_name>sys_documentation_x_228328_ctwebhook_ct_webhooktbl__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-08-02 10:14:46</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

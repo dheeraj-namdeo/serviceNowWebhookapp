@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="incident">companyVALCHANGES^ORshort_descriptionVALCHANGES^ORpriorityVALCHANGES^EQ<item endquery="false" field="company" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="false" field="short_description" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="false" field="priority" goto="false" newquery="false" operator="VALCHANGES" or="true" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ctWebhookAppstore</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[    try {
+        var request = new sn_ws.RESTMessageV2();
+        request.setHttpMethod('post');
+		
+		 var target = new GlideRecord('x_228328_ctwebhook_ct_webhooktbl');
+		var ctwebhook;
+		target.query();
+		while (target.next()) { 
+		  ctwebhook= target.webhookurl;
+		}
+
+        request.setEndpoint(ctwebhook);
+        var body = "<servicenowtkt><mcode>1</mcode><short_description>" + current.short_description + "</short_description><ticketnumber>"  + current.number + "</ticketnumber><priority>"  + current.priority + "</priority></servicenowtkt>";
+        // api.myjson.com/bins/4j985 is just a static JSON data store
+		request.setRequestBody(body);
+
+        var response = request.executeAsync();
+        var httpResponseStatus = response.getStatusCode();
+        var httpResponseContentType = response.getHeader('Content-Type');
+        var parser = new global.JSONParser();
+        var parsed = {};
+        var httpResponseBody;
+
+
+        gs.debug("http response status_code: " + httpResponseStatus);
+        gs.debug("http response content-type: " + httpResponseContentType);
+
+
+        //  if request is successful then parse the response body
+        if (httpResponseStatus == 200 && httpResponseContentType == 'application/json') {
+            httpResponseBody = response.getBody();
+
+            gs.print('httpStatus: ' + httpResponseStatus);
+        }
+    }
+    catch (ex) {
+        var message = ex.getMessage();
+        gs.debug(message);
+    }
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-30 12:05:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>275cc43e37231300eb30dcc773990e11</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>ctWebhookAppstore</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ctwebhook" source="x_228328_ctwebhook">b9118c7637231300eb30dcc773990eb6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ctwebhook">b9118c7637231300eb30dcc773990eb6</sys_scope>
+        <sys_update_name>sys_script_275cc43e37231300eb30dcc773990e11</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-02 11:35:06</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=275cc43e37231300eb30dcc773990e11"/>
+</record_update>
